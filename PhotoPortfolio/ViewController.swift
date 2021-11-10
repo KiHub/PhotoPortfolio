@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
+
 
 class ViewController: UIViewController {
 
