@@ -51,11 +51,21 @@ class CustomTabBarController: RAMAnimatedTabBarController {
         
     }
     func configure()  {
+        
         let vc1 = UIViewController()
-        let vc2 = UIViewController()
+        let vc2 = SecondViewController()
         
         vc1.view.backgroundColor = .systemGreen
-        vc2.view.backgroundColor = .systemOrange
+      //  vc2.view.backgroundColor = .systemOrange
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 250, height: 50 ))
+        
+        vc1.view.addSubview(button)
+        
+     
+//        vc1.button.backgroundColor = .systemGray2
+//        vc1.button.center = view.center
+//        vc1.button.setTitle("Hello", for: .normal)
         
         vc1.tabBarItem = RAMAnimatedTabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         
