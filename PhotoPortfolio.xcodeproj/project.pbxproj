@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,9 @@
 		0B3E619C273C156200AFCE3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3E619A273C156200AFCE3F /* LaunchScreen.storyboard */; };
 		0B4D17AC273C6471009096A4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D17AB273C6471009096A4 /* ContactViewController.swift */; };
 		0B4D17B2273C89D4009096A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D17B1273C89D4009096A4 /* ViewController.swift */; };
-		0B4D17B6273DADD0009096A4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D17B5273DADD0009096A4 /* SecondViewController.swift */; };
+		0B4D17B6273DADD0009096A4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D17B5273DADD0009096A4 /* FirstViewController.swift */; };
+		0B4D17BA273EA3A9009096A4 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4D17B9273EA3A9009096A4 /* CHTCollectionViewWaterfallLayout */; };
+		0B4D17C1273EA4B8009096A4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D17C0273EA4B8009096A4 /* ImageCollectionViewCell.swift */; };
 		650222E7B3B3F3BD1DB075DB /* Pods_PhotoPortfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A6C78C778D1138AD5A2F81 /* Pods_PhotoPortfolio.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +32,8 @@
 		0B3E619D273C156200AFCE3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4D17AB273C6471009096A4 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0B4D17B1273C89D4009096A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B4D17B5273DADD0009096A4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0B4D17B5273DADD0009096A4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		0B4D17C0273EA4B8009096A4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7697CB54E417E7B130FC483F /* Pods-PhotoPortfolio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPortfolio.debug.xcconfig"; path = "Target Support Files/Pods-PhotoPortfolio/Pods-PhotoPortfolio.debug.xcconfig"; sourceTree = "<group>"; };
 		96A6C78C778D1138AD5A2F81 /* Pods_PhotoPortfolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoPortfolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62079CA0BA50FA62D83F4B2 /* Pods-PhotoPortfolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPortfolio.release.xcconfig"; path = "Target Support Files/Pods-PhotoPortfolio/Pods-PhotoPortfolio.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B4D17BA273EA3A9009096A4 /* CHTCollectionViewWaterfallLayout in Frameworks */,
 				650222E7B3B3F3BD1DB075DB /* Pods_PhotoPortfolio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +76,8 @@
 				0B3E618F273C155F00AFCE3F /* AppDelegate.swift */,
 				0B3E6191273C155F00AFCE3F /* SceneDelegate.swift */,
 				0B4D17B1273C89D4009096A4 /* ViewController.swift */,
-				0B4D17B5273DADD0009096A4 /* SecondViewController.swift */,
+				0B4D17B5273DADD0009096A4 /* FirstViewController.swift */,
+				0B4D17C0273EA4B8009096A4 /* ImageCollectionViewCell.swift */,
 				0B3E6193273C155F00AFCE3F /* PortfolioViewController.swift */,
 				0B4D17AB273C6471009096A4 /* ContactViewController.swift */,
 				0B3E6195273C155F00AFCE3F /* Main.storyboard */,
@@ -118,6 +123,9 @@
 			dependencies = (
 			);
 			name = PhotoPortfolio;
+			packageProductDependencies = (
+				0B4D17B9273EA3A9009096A4 /* CHTCollectionViewWaterfallLayout */,
+			);
 			productName = PhotoPortfolio;
 			productReference = 0B3E618C273C155F00AFCE3F /* PhotoPortfolio.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 0B3E6183273C155F00AFCE3F;
+			packageReferences = (
+				0B4D17B8273EA3A9009096A4 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
+			);
 			productRefGroup = 0B3E618D273C155F00AFCE3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -214,9 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4D17B6273DADD0009096A4 /* SecondViewController.swift in Sources */,
+				0B4D17B6273DADD0009096A4 /* FirstViewController.swift in Sources */,
 				0B4D17B2273C89D4009096A4 /* ViewController.swift in Sources */,
 				0B3E6194273C155F00AFCE3F /* PortfolioViewController.swift in Sources */,
+				0B4D17C1273EA4B8009096A4 /* ImageCollectionViewCell.swift in Sources */,
 				0B4D17AC273C6471009096A4 /* ContactViewController.swift in Sources */,
 				0B3E6190273C155F00AFCE3F /* AppDelegate.swift in Sources */,
 				0B3E6192273C155F00AFCE3F /* SceneDelegate.swift in Sources */,
@@ -425,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B4D17B8273EA3A9009096A4 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B4D17B9273EA3A9009096A4 /* CHTCollectionViewWaterfallLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B4D17B8273EA3A9009096A4 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
+			productName = CHTCollectionViewWaterfallLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B3E6184273C155F00AFCE3F /* Project object */;
 }

@@ -65,13 +65,15 @@ class CustomTabBarController: RAMAnimatedTabBarController {
     
     func configure()  {
         
-        let vc1 = UIViewController()
-        let vc2 = SecondViewController()
+        let vc1 = FirstViewController()
+        let vc2 = UIViewController()
+        
+        vc2.view.backgroundColor = .orange
         
         
      
         
-        vc1.view.backgroundColor = .systemGreen
+      //  vc1.view.backgroundColor = .systemGreen
       
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 250, height: 50 ))
