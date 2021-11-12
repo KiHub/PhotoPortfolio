@@ -32,7 +32,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
         let images = Array(1...9).map {"image\($0)"}
         models = images.compactMap {
-            return Model.init(imageName: $0, height: CGFloat.random(in: 300...600))
+            return Model.init(imageName: $0, height: CGFloat.random(in: 50...600))
         }
         
        // view.backgroundColor = #colorLiteral(red: 0.2952214777, green: 0.6588315964, blue: 0.6760896444, alpha: 1)
