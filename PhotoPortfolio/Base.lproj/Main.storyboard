@@ -24,8 +24,54 @@
             </objects>
             <point key="canvasLocation" x="-1005" y="2"/>
         </scene>
+        <!--Zoom View Controller-->
+        <scene sceneID="ROa-b9-kCz">
+            <objects>
+                <viewController storyboardIdentifier="ZoomViewController" id="hPU-pX-oxe" customClass="ZoomViewController" customModule="PhotoPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L4l-2K-JsR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vj0-vN-D4F">
+                                <rect key="frame" x="0.0" y="94" width="414" height="418"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poT-qk-bPo">
+                                <rect key="frame" x="182" y="682" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DY2-3T-jtW"/>
+                                    <constraint firstAttribute="width" constant="50" id="cUz-ti-QIb"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Back"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="hPU-pX-oxe" eventType="touchUpInside" id="OXE-uB-bGf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bKb-RX-srC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vj0-vN-D4F" firstAttribute="trailing" secondItem="bKb-RX-srC" secondAttribute="trailing" id="3R0-fi-YGZ"/>
+                            <constraint firstItem="bKb-RX-srC" firstAttribute="trailing" secondItem="poT-qk-bPo" secondAttribute="trailing" constant="182" id="BZR-3W-9iD"/>
+                            <constraint firstItem="poT-qk-bPo" firstAttribute="leading" secondItem="bKb-RX-srC" secondAttribute="leading" constant="182" id="GT1-AZ-dVu"/>
+                            <constraint firstItem="Vj0-vN-D4F" firstAttribute="top" secondItem="bKb-RX-srC" secondAttribute="top" constant="50" id="KSS-iC-r11"/>
+                            <constraint firstItem="bKb-RX-srC" firstAttribute="bottom" secondItem="poT-qk-bPo" secondAttribute="bottom" constant="130" id="gi6-gg-7MK"/>
+                            <constraint firstItem="Vj0-vN-D4F" firstAttribute="leading" secondItem="bKb-RX-srC" secondAttribute="leading" id="gzm-xd-qfM"/>
+                            <constraint firstItem="bKb-RX-srC" firstAttribute="bottom" secondItem="Vj0-vN-D4F" secondAttribute="bottom" constant="350" id="i6L-fd-u2a"/>
+                            <constraint firstItem="poT-qk-bPo" firstAttribute="centerX" secondItem="L4l-2K-JsR" secondAttribute="centerX" id="ktM-wI-mIL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tSO-A1-CXf"/>
+                    <connections>
+                        <outlet property="imageOutlet" destination="Vj0-vN-D4F" id="CbC-v9-Lgp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxP-Jv-CQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.956521739130437" y="11.383928571428571"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Back" width="42" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

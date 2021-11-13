@@ -74,4 +74,39 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return CGSize(width: view.frame.size.width/2, height: models[indexPath.row].height)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        print(indexPath.item, "item")
+       // let selectedItem = indexPath.row
+       // self.performSegue(withIdentifier: "detail", sender: self)
+    }
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(
+        identifier: nil, previewProvider: nil
+        )
+        {_ in
+            let open = UIAction(title: "Open", image: UIImage(systemName: "link"),
+                                identifier: nil, discoverabilityTitle: nil,
+                                state: .off) {_ in print("Tapped open")}
+     //       let open = UIImage(named: "image\(indexPath.row)")
+            
+            
+            return UIMenu(
+                title: "", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open]
+            )
+        }
+        return config
+    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let selectedItem = sender as? String else {
+//            return
+//        }
+//        if segue.identifier == "detail" {
+//            guard let destinationVC = segue.destination as?
+//                    ZoomViewController else {
+//                return
+//            }
+//            destinationVC.selectedPhoto = selectedItem
+//        }
+//    }
 }
