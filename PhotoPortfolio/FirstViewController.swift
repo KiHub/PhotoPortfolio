@@ -40,7 +40,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        
+        collectionView.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         
         
         
@@ -51,6 +53,8 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+        
+        
         
     }
     
@@ -67,6 +71,13 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             fatalError()
         }
         cell.configure(image: UIImage(named: models[indexPath.row].imageName))
+        
+        //MARK: - cell corner radius
+            cell.contentView.layer.cornerRadius = 20
+            cell.contentView.layer.masksToBounds = true
+
+           
+        
         return cell
     }
     
@@ -77,6 +88,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         print(indexPath.item, "item")
+        
        // let selectedItem = indexPath.row
        // self.performSegue(withIdentifier: "detail", sender: self)
     }
@@ -105,11 +117,15 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
            func makeImagePreview() -> UIViewController {
                 let viewController = UIViewController()
                 
-                let imageView = UIImageView(image: UIImage(named: "image\(indexPath.row)"))
+            let imageView = UIImageView(image: UIImage(named: "image\(indexPath.row)"))
                 imageView.contentMode = .scaleAspectFill
                 viewController.view = imageView
+            
                 
-                imageView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: models[indexPath.row].height)
+            imageView.frame = CGRect(x: 0, y: 0, width: imageView.frame.size.width, height: imageView.frame.size.height)
+            
+            
+        //    imageView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: models[indexPath.row].height)
                 
                 viewController.preferredContentSize = imageView.frame.size
                 viewController.view.backgroundColor = .clear
@@ -123,16 +139,17 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             identifier: nil, previewProvider: makeImagePreview
         )
         {_ in
-           // let image = UIImage(named: "image\(indexPath.row)")
+          
+            //MARK: - Preciew menu configuration
             
-            let open = UIAction(title: "Open", image: UIImage(systemName: "link"),
-                                identifier: nil, discoverabilityTitle: nil,
-                                state: .off) {_ in print("Tapped open")}
-     //       let open = UIImage(named: "image\(indexPath.row)")
+//            let open = UIAction(title: "Open", image: UIImage(systemName: "link"),
+//                                identifier: nil, discoverabilityTitle: nil,
+//                                state: .off) {_ in print("Tapped open")}
+    
             
             
             return UIMenu(
-                title: "", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open]
+                title: "", image: nil, identifier: nil, options: UIMenu.Options.displayInline
             )
            
         }
@@ -144,19 +161,5 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
    
     
-//    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
-//        <#code#>
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let selectedItem = sender as? String else {
-//            return
-//        }
-//        if segue.identifier == "detail" {
-//            guard let destinationVC = segue.destination as?
-//                    ZoomViewController else {
-//                return
-//            }
-//            destinationVC.selectedPhoto = selectedItem
-//        }
-//    }
+
 }
