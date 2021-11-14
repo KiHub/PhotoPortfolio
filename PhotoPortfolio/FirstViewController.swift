@@ -30,7 +30,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let images = Array(1...9).map {"image\($0)"}
+        let images = Array(0...9).map {"image\($0)"}
         models = images.compactMap {
             return Model.init(imageName: $0, height: CGFloat.random(in: 50...600))
         }
@@ -80,11 +80,51 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
        // let selectedItem = indexPath.row
        // self.performSegue(withIdentifier: "detail", sender: self)
     }
+    
+//    func makeImagePreview() -> UIViewController {
+//            let viewController = UIViewController()
+//
+//            let imageView = UIImageView(image: models[indexPath.row] )
+//            imageView.contentMode = .scaleAspectFit
+//            viewController.view = imageView
+//
+//            imageView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: models[indexPath.row].height)
+//
+//            viewController.preferredContentSize = imageView.frame.size
+//            viewController.view.backgroundColor = .clear
+//
+//            return viewController
+//        }
+    
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        // let identifier = NSString(string: "image\(indexPath.row)")
+           
+        //MARK: - preview content configuration
+        
+           func makeImagePreview() -> UIViewController {
+                let viewController = UIViewController()
+                
+                let imageView = UIImageView(image: UIImage(named: "image\(indexPath.row)"))
+                imageView.contentMode = .scaleAspectFill
+                viewController.view = imageView
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: models[indexPath.row].height)
+                
+                viewController.preferredContentSize = imageView.frame.size
+                viewController.view.backgroundColor = .clear
+                
+                return viewController
+            }
+       
+        
         let config = UIContextMenuConfiguration(
-        identifier: nil, previewProvider: nil
+            
+            identifier: nil, previewProvider: makeImagePreview
         )
         {_ in
+           // let image = UIImage(named: "image\(indexPath.row)")
+            
             let open = UIAction(title: "Open", image: UIImage(systemName: "link"),
                                 identifier: nil, discoverabilityTitle: nil,
                                 state: .off) {_ in print("Tapped open")}
@@ -94,9 +134,19 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             return UIMenu(
                 title: "", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open]
             )
+           
         }
         return config
+        
     }
+    
+
+    
+   
+    
+//    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+//        <#code#>
+//    }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        guard let selectedItem = sender as? String else {
 //            return
