@@ -46,6 +46,7 @@ class TextMeViewController: UIViewController {
     
     @objc func buttonClicked(_ : UIButton) {
         print("Hello")
+        showMailComposer()
         
         
     }
@@ -55,7 +56,41 @@ class TextMeViewController: UIViewController {
     
     func showMailComposer()  {
         
+        guard MFMailComposeViewController.canSendMail() else {
+            print("Error")
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["kirillkalapov@gmail.com"])
+        composer.setSubject("Hello!")
+        
+        present(composer, animated: true)
     }
     
 
+}
+
+extension TextMeViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if let _ = error {
+            controller.dismiss(animated: true)
+           // return
+        }
+        switch result {
+        case .cancelled:
+            print("Canselled")
+        case .failed:
+            print("Failed to send")
+        case .saved:
+            print("Saved")
+        case .sent:
+            print("Email sent")
+        }
+        controller.dismiss(animated: true)
+    }
+    
+    
 }
