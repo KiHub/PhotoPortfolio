@@ -37,13 +37,16 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         // view.backgroundColor = #colorLiteral(red: 0.2952214777, green: 0.6588315964, blue: 0.6760896444, alpha: 1)
         
+     
+        
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+     
         
         collectionView.layer.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+       
         
     }
     
@@ -77,6 +80,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = true
+      
         
         cell.layer.shadowColor = UIColor.darkGray.cgColor
         cell.layer.shadowOffset = CGSize(width:1,height: 2.0)

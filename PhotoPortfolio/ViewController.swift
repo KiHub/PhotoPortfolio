@@ -48,15 +48,41 @@ class CustomTabBarController: RAMAnimatedTabBarController {
         super.viewDidLoad()
         configure()
 
-        tabBar.tintColor = #colorLiteral(red: 0.7732355595, green: 0.8179653287, blue: 0.8506916165, alpha: 1)
+        tabBar.tintColor = #colorLiteral(red: 0.01058435347, green: 0.266901046, blue: 0.2860827446, alpha: 1)
         tabBar.barTintColor = .darkGray
         tabBar.layer.cornerRadius = 20
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tabBar.layer.masksToBounds = true
         tabBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
+
+     
         
+        //MARK: - Create floating tab bar
         
-        
+//        let layer = CAShapeLayer()
+//           layer.path = UIBezierPath(roundedRect: CGRect(x: 30, y: tabBar.bounds.minY + 5, width: tabBar.bounds.width - 60, height: tabBar.bounds.height + 10), cornerRadius: (tabBar.frame.width/2)).cgPath
+//           layer.shadowColor = UIColor.lightGray.cgColor
+//           layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+//           layer.shadowRadius = 25.0
+//           layer.shadowOpacity = 0.3
+//           layer.borderWidth = 1.0
+//           layer.opacity = 1.0
+//           layer.isHidden = false
+//           layer.masksToBounds = false
+//           layer.fillColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
+//
+//
+//
+//           tabBar.layer.insertSublayer(layer, at: 0)
+//
+//           if let items = tabBar.items {
+//               items.forEach { item in
+//                   item.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -15, right: 0)
+//               }
+//           }
+//
+//           tabBar.itemWidth = 30.0
+//           tabBar.itemPositioning = .centered
      
        
     }
@@ -66,9 +92,9 @@ class CustomTabBarController: RAMAnimatedTabBarController {
     func configure()  {
         
         let vc1 = FirstViewController()
-        let vc2 = UIViewController()
+        let vc2 = TextMeViewController()
         
-        vc2.view.backgroundColor = .orange
+      //  vc2.view.backgroundColor = .orange
         
         
      

@@ -13,6 +13,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        
         return imageView
         
     }()
@@ -21,6 +22,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubview(imageView)
         contentView.clipsToBounds = true
+        
     }
     
     required init?(coder: NSCoder) {
